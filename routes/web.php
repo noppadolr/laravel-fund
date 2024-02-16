@@ -41,3 +41,21 @@ Route::get('contact/{id}',function($id){
 Route::get('home',function(){
     return "<a href='".route('edit-contact',12)."'>About</a>";
 });
+
+//  #Route Grouping
+// รูปแบบการเชียน
+// Route::group([],function(){
+
+// });
+Route::group(['prefix'=>'customer'],function(){
+    Route::get('/',function(){
+        return "<h1>Customer List</h1>"; });
+
+    Route::get('/create',function(){
+        return "<h1>Customer Create</h1>"; });
+
+    Route::get('/show',function(){
+    return "<h1>Customer Show</h1>"; });
+
+});
+
